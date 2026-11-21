@@ -6,7 +6,9 @@ dependencies:
   espressif/esp_hosted: "^3.0.9"
   espressif/esp_wifi_remote: "^1.6.5"
   espressif/cjson: "^1.7.19"
-  # P4 Fleet agent, from the p4-fleet repo next to this one. Switch to
-  # {git: <p4-fleet repo url>, path: agent/fleet_agent} once it is published.
+  # P4 Fleet agent. dependencies.lock pins the exact commit; run
+  # `idf.py update-dependencies` to pick up newer agent versions.
   fleet_agent:
-    path: ../../p4-fleet/agent/fleet_agent
+    git: https://github.com/optimusprime-nn/p4-fleet.git
+    path: agent/fleet_agent
+    version: main
