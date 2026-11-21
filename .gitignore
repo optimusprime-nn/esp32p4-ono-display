@@ -20,3 +20,6 @@ sdkconfig.defaults.local
 *.swp
 .DS_Store
 Thumbs.db
+
+# Local build log
+build.log
