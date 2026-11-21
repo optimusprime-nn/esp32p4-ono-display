@@ -1,0 +1,12 @@
+# Copy to sdkconfig.defaults.local (ignored by git) to set your own build-time
+# defaults. Everything here can also be changed on the device in Settings.
+#CONFIG_ONO_WIFI_SSID="my-network"
+#CONFIG_ONO_WIFI_PASSWORD="my-password"
+#CONFIG_ONO_SERVER_URL="http://192.168.1.1:8787"
+#CONFIG_ONO_TOKEN="paste-an-ono-api-token-here"
+#CONFIG_ONO_POLL_S=10
+#CONFIG_ONO_TLS_VERIFY=n
+#CONFIG_ONO_DEFAULT_TZ=7
+#CONFIG_LWIP_LOCAL_HOSTNAME="ono-display"
+# p4-fleet: must match FLEET_DEVICE_TOKEN on the fleet server. Empty = monitor-only.
+#CONFIG_FLEET_AGENT_TOKEN="paste-the-fleet-device-token-here"

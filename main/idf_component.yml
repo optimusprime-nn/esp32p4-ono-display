@@ -1,0 +1,12 @@
+dependencies:
+  idf: ">=6.0"
+  lvgl/lvgl: "~9.5.0"
+  espressif/esp_lcd_jd9365: "2.0.2"
+  espressif/esp_lcd_touch: "~1.1.2"
+  espressif/esp_hosted: "^3.0.9"
+  espressif/esp_wifi_remote: "^1.6.5"
+  espressif/cjson: "^1.7.19"
+  # P4 Fleet agent, from the p4-fleet repo next to this one. Switch to
+  # {git: <p4-fleet repo url>, path: agent/fleet_agent} once it is published.
+  fleet_agent:
+    path: ../../p4-fleet/agent/fleet_agent

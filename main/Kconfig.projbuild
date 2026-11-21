@@ -1,0 +1,66 @@
+menu "ONO Display"
+
+    menu "Defaults (can be changed on the device in Settings)"
+        config ONO_WIFI_SSID
+            string "Wi-Fi SSID"
+            default ""
+
+        config ONO_WIFI_PASSWORD
+            string "Wi-Fi password"
+            default ""
+
+        config ONO_SERVER_URL
+            string "ONO server URL"
+            default ""
+            help
+                Base URL of the Open Network Observatory dashboard/API, for
+                example http://192.168.1.1:8787 or https://opnsense.lan:8787.
+                ONO listens on 127.0.0.1:8787 by default: set
+                [server] listen = "0.0.0.0:8787" (with a token) so the display
+                can reach it.
+
+        config ONO_TOKEN
+            string "ONO API token"
+            default ""
+            help
+                Sent as "Authorization: Bearer <token>". Either the [server]
+                token from ono.toml or an API token created under
+                Settings > Users > API tokens in the ONO web UI. A read-only
+                token is enough unless you want to acknowledge events from the
+                display.
+
+        config ONO_POLL_S
+            int "Refresh interval, seconds"
+            default 10
+            range 5 300
+
+        config ONO_TLS_VERIFY
+            bool "Verify the ONO server's HTTPS certificate"
+            default y
+            help
+                Uses the ESP-IDF CA bundle. Turn off (or untick it on the
+                device) for a self-signed certificate such as the OPNsense
+                web GUI certificate.
+
+        config ONO_DEFAULT_TZ
+            int "Default timezone (index into the Settings list; 0 = UTC)"
+            default 0
+            range 0 17
+    endmenu
+
+    menu "Board orientation"
+        config ONO_LCD_MIRROR_X
+            bool "Mirror LCD X"
+            default y
+        config ONO_LCD_MIRROR_Y
+            bool "Mirror LCD Y"
+            default y
+        config ONO_TOUCH_MIRROR_X
+            bool "Mirror touch X"
+            default n
+        config ONO_TOUCH_MIRROR_Y
+            bool "Mirror touch Y"
+            default y
+    endmenu
+
+endmenu
